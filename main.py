@@ -40,7 +40,7 @@ def letter_match(solution, guess, letter_freq):
             res += Fore.GREEN + guess[i] + Style.RESET_ALL
             freq_copy[guess[i]] -= 1
         elif guess[i] in solution and freq_copy[guess[i]] > 0:
-            res += Fore.YELLOW + guess[i] + Style.RESET_ALL
+            res += Fore.LIGHTYELLOW_EX + guess[i] + Style.RESET_ALL
             freq_copy[guess[i]] -= 1
         else:
             res += guess[i]
@@ -81,13 +81,13 @@ while play_again:
     if num_guesses == 6 and not finished:
         print("You have used up all your guesses. The word was: " + Fore.GREEN + solution + Style.RESET_ALL + "\n")
 
-    choice = input("Would you like to play again? Please enter 'Y' for yes and 'N' for no:\n")
+    choice = input("Would you like to play again? Please enter 'Y' for yes and 'n' for no:\n")
     while choice != "Y" and choice != "N":
-        choice = input("Please enter 'Y' for yes and 'N' for no:\n")
+        choice = input("Please enter 'Y' for yes and 'n' for no:\n")
 
     if choice == "Y":
         play_again = True
-    elif choice == "N":
+    elif choice == "n":
         play_again = False
         print("Thank you for playing!\n")
     
